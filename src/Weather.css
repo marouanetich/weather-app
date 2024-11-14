@@ -1,0 +1,105 @@
+:root {
+  --blue: #6dd5ed;
+  --light-blue: #e9edf7;
+  --dark-blue: #cedceb;
+}
+
+body {
+  background-color: var(--light-blue);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 100vmax;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2193b0;
+  border-radius: 100vmax;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25a1c0;
+}
+
+.weather-container {
+  background: radial-gradient(var(--blue), #2193b0);
+  border-radius: 1.25rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.input-container {
+  position: relative;
+  max-width: 350px;
+}
+
+.input-container input[list='cities'] {
+  background-color: var(--dark-blue);
+  padding-inline-start: 2.75rem;
+}
+
+.input-container :where(.search-icon, .clear-icon) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+}
+
+.input-container .search-icon {
+  left: 1rem;
+}
+
+.input-container .clear-icon {
+  right: 1rem;
+  cursor: pointer;
+}
+
+.forecast-now-container {
+  max-width: 788px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .forecast-now-container > div:last-child {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 528px) {
+  .weather-date-time {
+    text-align: center !important;
+  }
+}
+
+.forecast-current-day-hourly,
+.forecast-7-days {
+  overflow-x: auto;
+}
+
+.forecast-7-days > div:last-child {
+  max-width: 788px;
+  margin-inline: auto;
+}
+
+.forecast-current-day-hourly > div {
+  display: grid;
+  grid-template-rows: '30px 80px 50px auto';
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.forecast-current-day-hourly > div img {
+  margin-inline: auto;
+}
+
+.forecast-current-day-hourly > div img + div {
+  white-space: nowrap;
+}
+
+.visible {
+  background-color: #1a93b2;
+}
